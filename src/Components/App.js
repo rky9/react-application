@@ -9,6 +9,7 @@ alert("hi")
   return (
     <div>
       <GlobalButton name="click" variant="contained" onClick={clickHandler} color="error"/>
+      <GlobalButton name="click" variant="contained" onClick={clickHandler} color="error"/>
     </div>
   );
 }
