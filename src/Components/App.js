@@ -1,15 +1,16 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import GlobalButton from "./Common/Button";
 import GlobalInput from "./Common/Input";
+import SliderContainer from './Slider'
 
 function App() {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState (" ");
   const clickHandler = () => {
-    alert(inputValue)
+    alert(inputValue);
   };
   const inputDatais = (data) => {
-    setInputValue(data)
+    setInputValue(data);
   };
   return (
     <div style={{ padding: "15px" }}>
@@ -20,12 +21,14 @@ function App() {
         onClick={clickHandler}
         color="error"
       />
-      <GlobalButton
-        name="click"
-        variant="contained"
-        onClick={clickHandler}
-        color="error"
-      />
+     
+    <div className="main">
+    <div className="container">
+         
+          <div className="item">Two</div>
+        </div>
+        <textarea></textarea>
+    </div>
     </div>
   );
 }
