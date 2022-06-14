@@ -11,13 +11,16 @@ import GlobalButton from "../Common/Button";
 import ContactList from "../Common/ContectList";
 export default function Dashboard() {
   const [val, setVal] = React.useState("");
-  const [sendData, setSendData] = React.useState([{}]);
+  const [sendData, setSendData] = React.useState([]);
   const inputChange = (valueis) => {
     setVal(valueis);
   };
   const addContact = () => {
     setSendData([...sendData, { name: val, email: "rajesh.coer@gmail.com" }]);
     setVal("");
+  };
+  const deleteData = (name) => {
+    setSendData(sendData.filter((e) => e.name !== name));
   };
   return (
     <Box>
@@ -46,7 +49,7 @@ export default function Dashboard() {
           <Typography gutterBottom variant="h5" component="div">
             All Lists
           </Typography>
-          <ContactList data={sendData} />
+          <ContactList data={sendData} deleteData={deleteData} />
         </CardContent>
         <CardActions>clear</CardActions>
       </Card>

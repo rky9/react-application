@@ -26,7 +26,9 @@ export default function ContactList(props) {
     ref.current.ownerDocument.body.scrollTop = 0;
     setMessages(messageExamples);
   }, [value, setMessages]);
-
+  const deleteList = (name) => {
+    props.deleteData(name);
+  };
   return (
     <Box sx={{ pb: 7 }} ref={ref}>
       <CssBaseline />
@@ -39,7 +41,11 @@ export default function ContactList(props) {
             <ListItemText primary={name} secondary={email} />
             <ListItemText primary="Edit" />
 
-            <IconButton edge="end" aria-label="delete">
+            <IconButton
+              edge="end"
+              aria-label="delete"
+              onClick={() => deleteList(name)}
+            >
               <DeleteIcon />
             </IconButton>
           </ListItem>
