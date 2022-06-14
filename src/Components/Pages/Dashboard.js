@@ -16,8 +16,14 @@ export default function Dashboard() {
     setVal(valueis);
   };
   const addContact = () => {
-    setSendData([...sendData, { name: val, email: "rajesh.coer@gmail.com" }]);
-    setVal("");
+    setSendData([
+      ...sendData,
+      {
+        name: val,
+        email: "rajesh.coer@gmail.com",
+        person: `https://i.ytimg.com/vi/_Uu12zY01ts/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCpX6Jan2rxrCAZxJYDXppTP4MoQA`,
+      },
+    ]);
   };
   const deleteData = (name) => {
     setSendData(sendData.filter((e) => e.name !== name));
