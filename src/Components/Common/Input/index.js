@@ -11,7 +11,7 @@ export default function GlobalInput(props) {
 
   return (
     <TextField
-      label="Size"
+      label={props.placeholder}
       id="outlined-size-small"
       value={value}
       size="small"
