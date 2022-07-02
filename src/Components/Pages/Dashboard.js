@@ -16,8 +16,8 @@ export default function Dashboard() {
     setVal(valueis);
   };
   const addContact = () => {
-    setSendData([
-      ...sendData,
+    setSendData((d) => [
+      ...d,
       {
         name: val,
         email: "rajesh.coer@gmail.com",
@@ -26,7 +26,7 @@ export default function Dashboard() {
     ]);
   };
   const deleteData = (name) => {
-    setSendData(sendData.filter((e) => e.name !== name));
+    setSendData((prev) => prev.filter((e) => e.name !== name));
   };
   return (
     <Box>
